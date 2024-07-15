@@ -13,4 +13,8 @@ def test_quick_sort():
     assert quick_sort([3, 6, 8, 10, 1, 2, 1]) == [1, 1, 2, 3, 6, 8, 10]
 
 
+def test_funtion():
+    return True
+
+
 test_quick_sort()
