@@ -113,13 +113,10 @@ def prediction_play_tennis(X, list_x_name, prior_probablity, conditional_probail
     x3 = get_index_from_value(X[2], list_x_name[2])
     x4 = get_index_from_value(X[3], list_x_name[3])
 
-    p0 = 0
-    p1 = 0
-    for i in range(len(prior_probablity)):
-        p0 += prior_probablity[0] * conditional_probailities[i][0, x1] * conditional_probailities[i][0,
-                                                                                                     x2] * conditional_probailities[i][0, x3] * conditional_probailities[i][0, x4]
-        p1 += prior_probablity[1] * conditional_probailities[i][1, x1] * conditional_probailities[i][1,
-                                                                                                     x2] * conditional_probailities[i][1, x3] * conditional_probailities[i][1, x4]
+    p0 = prior_probablity[0] * conditional_probailities[0][0, x1] * conditional_probailities[1][0,
+                                                                                                x2] * conditional_probailities[2][0, x3] * conditional_probailities[3][0, x4]
+    p1 = prior_probablity[1] * conditional_probailities[0][1, x1] * conditional_probailities[1][1,
+                                                                                                x2] * conditional_probailities[2][1, x3] * conditional_probailities[3][1, x4]
     if p0 > p1:
         y_pred = 0
     else:
